@@ -12,19 +12,7 @@ app.get("/saludo", (req, res) => {
 
 app.listen(8080, () => console.log("Servidor arriba en el puerto 8080"));
 
-let users = [];
 
-app.post("/api/user", (req, res) => {
-  let user = req.body;
-
-  if (!user.first_name || !user.last_name) {
-    return res
-      .status(400)
-      .send({ status: "error", error: "Incomplete values" });
-  }
-  users.push(user);
-  res.send({ status: "success", message: "User Created" });
-});
 
 //-------------------------PRODUCT MANAGER-----------------------------//
 
